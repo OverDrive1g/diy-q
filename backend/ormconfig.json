@@ -1,0 +1,11 @@
+{
+   "type": "sqlite",
+   "database": "/tmp/diy-q/sqlite",
+   "logging": true,
+   "migrations": [
+      "src/migrations/**/*.ts"
+   ],
+   "cli": {
+      "migrationsDir": "src/migrations"
+   }
+}

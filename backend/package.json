@@ -1,0 +1,37 @@
+{
+  "name": "diy-q-bavkend",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
+    "debug": "nodemon --config nodemon-debug.json",
+    "start": "node dist/main",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "typeorm": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js --config ormconfig.json",
+    "typeorm:migrate-create": "npm run typeorm migration:create -- -n",
+    "typeorm:migrate": "npm run typeorm migration:generate -- -n",
+    "typeorm:run": "npm run typeorm migration:run"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@sweet-monads/either": "^2.1.4",
+    "fastify": "^3.9.2",
+    "sqlite3": "^5.0.1",
+    "typeorm": "^0.2.29",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "@types/node": "^14.14.20",
+    "@types/uuid": "^8.3.0",
+    "eslint": "^7.17.0",
+    "nodemon": "^2.0.7",
+    "prettier": "^2.2.1",
+    "ts-loader": "^8.0.14",
+    "ts-node": "^9.1.1",
+    "tsconfig-paths": "^3.9.0",
+    "typescript": "^4.1.3"
+  }
+}
