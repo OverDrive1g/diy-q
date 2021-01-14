@@ -1,15 +1,40 @@
 @startuml
 
-entity "Product" as product {}
-entity "Resource" as resource {}
-entity "Order" as order {}
-entity "Warehouse" as warehouse {}
-entity "Supplier" as supplier {}
+entity "Product" as product {
+  * name
+  * description
+  * price
+  * resources
+  * attributes
+}
+entity "Resource" as resource {
+  * name
+  * description
+  * price
+  * supplier
+}
+entity "Order" as order {
+  * products
+}
+entity "Warehouse" as warehouse {
+  * name
+  * resources
+}
+entity "Supplier" as supplier {
+  * name
+  * resources
+}
+entity "Order from supplier" as ordersuppleir {
+  * supplier 
+  * supplier resources
+}
 
 
 order }o--|{ product
 product ||--|{ resource
 resource }o--o{ warehouse
-resource }o--o{supplier
+resource }o--o{ supplier
+supplier }o--o{ ordersuppleir
+resource }o--o{ ordersuppleir
 
 @enduml
