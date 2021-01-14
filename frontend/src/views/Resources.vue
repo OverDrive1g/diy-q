@@ -12,6 +12,7 @@
 <script lang="ts">
 import Vue from "vue";
 import { mapState, mapGetters } from "vuex";
+
 export default Vue.extend({
   name: "Resources",
   data: () => {
