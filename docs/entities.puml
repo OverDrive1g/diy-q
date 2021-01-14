@@ -1,0 +1,15 @@
+@startuml
+
+entity "Product" as product {}
+entity "Resource" as resource {}
+entity "Order" as order {}
+entity "Warehouse" as warehouse {}
+entity "Supplier" as supplier {}
+
+
+order }o--|{ product
+product ||--|{ resource
+resource }o--o{ warehouse
+resource }o--o{supplier
+
+@enduml
