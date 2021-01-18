@@ -5,12 +5,14 @@
       :items="products"
       :items-per-page="5"
       class="elevation-1"
+      v-on:click:row="navTo"
     ></v-data-table>
   </div>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
+import {mapState} from "vuex";
 
 export default Vue.extend({
   name: "Products",
@@ -24,15 +26,16 @@ export default Vue.extend({
         { text: "Базовая цена", value: "basePrice" },
         { text: "Цена реализации", value: "price" },
       ],
-      products: [
-        { name: "Название 1", basePrice: 100, price: 150 },
-        { name: "Название 2", basePrice: 100, price: 150 },
-        { name: "Название 3", basePrice: 100, price: 150 },
-        { name: "Название 4", basePrice: 100, price: 150 },
-        { name: "Название 5", basePrice: 100, price: 150 },
-        { name: "Название 6", basePrice: 100, price: 150 },
-      ],
     };
   },
+  computed:{
+    ...mapState(['products'])
+  },
+  methods:{
+    navTo(clickedProduct:any){
+      this.$router.push(`/product/${clickedProduct.id}`)
+      console.log(clickedProduct)
+    }
+  }
 });
 </script>

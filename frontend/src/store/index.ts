@@ -5,6 +5,14 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
+    products:[ 
+        { id:0, name: "Название 1", basePrice: 100, price: 150 },
+        { id:1, name: "Название 2", basePrice: 100, price: 150 },
+        { id:2, name: "Название 3", basePrice: 100, price: 150 },
+        { id:3, name: "Название 4", basePrice: 100, price: 150 },
+        { id:4, name: "Название 5", basePrice: 100, price: 150 },
+        { id:5, name: "Название 6", basePrice: 100, price: 150 },
+    ],
     resources: [
       {
         name: "Beef - Roasted, Cooked",
@@ -209,6 +217,9 @@ export default new Vuex.Store({
         return { ...i, suppliers };
       });
     },
+    productById: (state) => (id:number) => {
+      return state.products.find(product => product.id == id)
+    }
   },
   mutations: {},
   actions: {},

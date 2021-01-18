@@ -6,6 +6,7 @@ import Products from "../views/Products.vue";
 import Resources from "../views/Resources.vue";
 import Suppliers from "../views/Suppliers.vue";
 import Warehouses from "../views/Warehouses.vue";
+import ProductPage from "../views/ProductPage.vue";
 
 Vue.use(VueRouter);
 
@@ -24,6 +25,11 @@ const routes: Array<RouteConfig> = [
     path: "/products",
     name: "Products",
     component: Products
+  },
+  {
+    path: "/product/:id",
+    name: "Product",
+    component: ProductPage
   },
   {
     path: "/resources",
