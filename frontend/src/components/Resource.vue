@@ -27,8 +27,8 @@ import Vue from "vue";
 import { mapGetters } from "vuex";
 
 export default Vue.extend({
-  name: "Product",
-  props: ["productId"],
+  name: "Resource",
+  props: ["reourceId"],
   data: () => {
     return {
       product: null,
@@ -40,8 +40,7 @@ export default Vue.extend({
     }),
   },
   created() {
-    const foundProduct = this.$store.getters.productById(this.productId);
-    this.product = foundProduct;
+    //load res
   },
 });
 </script>
